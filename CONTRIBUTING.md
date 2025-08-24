@@ -7,7 +7,7 @@ Thank you for considering contributing to the LFR project!
 - Fork the repository
 - Create your feature branch (`git checkout -b feature/AmazingFeature`)
 - Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-- Push to the branch (`git push origin feature/AmazingFeature`)
+- Push to the branch (`git push origin feature/AmazingFeature`) 
 - Open a Pull Request
 
 ## Code of Conduct
