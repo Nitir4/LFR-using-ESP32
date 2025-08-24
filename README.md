@@ -1,10 +1,99 @@
-This is pretty much the final LFR that I am ever going to work on. I was bored out of my mind and a competition was coming up so i sort of decided to update my previous code for easier PID tuning and then the final version of code without any wifi so that i don't really get disqulaified from any other competitions.
+# LFR (Line Following Robot) using ESP32
 
-The basic hardware setup of this includes:
-         1) ESP32 (30 Pin variation)
-         2) TB6612FNG motor driver
-         3) Buck converter (LM2596)
-         4) Boost converter (generic)
-         5) 2x3.7V Li-ion cells
-         6) QTR sensor array
-         7) N20 motor drivers and wheels
+A project for building a Line Following Robot (LFR) using ESP32, featuring two modes of operation:
+- **PID Tuning Mode:** Tune your robot’s PID values via a web server interface.
+- **Run Mode:** Load finalized PID values for optimal line following.
+
+## Table of Contents
+
+- [Features](#features)
+- [Folder Structure](#folder-structure)
+- [Hardware Requirements](#hardware-requirements)
+- [Setup & Installation](#setup--installation)
+- [Usage](#usage)
+- [Circuit Diagram](#circuit-diagram)
+- [Contributing](#contributing)
+- [Troubleshooting](#troubleshooting)
+- [License](#license)
+
+## Features
+
+- **PID Tuning Mode:**  
+  Run a web server on your ESP32. Adjust and test PID parameters in real time from any web browser.
+- **Run Mode:**  
+  Use the tuned PID values for high-performance line following.
+
+## Folder Structure
+
+```
+LFR/
+├── pid-tuner/    # ESP32 code for PID tuning via web server
+├── pid-runner/   # ESP32 code for final run using tuned PID values
+├── docs/         # Documentation, schematics, etc.
+└── README.md
+```
+
+## Hardware Requirements
+
+- ESP32 Dev Board
+- IR Sensors (for line detection)
+- Motor Driver (e.g., L298N)
+- DC Motors (x2)
+- Chassis and wheels
+- Jumper wires, breadboard (or PCB)
+- Power supply (battery)
+
+## Setup & Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/Nitir4/LFR.git
+cd LFR
+```
+
+### 2. ESP32 Setup
+
+- Install [ESP32 board support](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html) in Arduino IDE.
+
+### 3. PID Tuning Mode
+
+1. Go to `/pid-tuner/`
+2. Open `pid_tuner.ino` in Arduino IDE
+3. Change WiFi credentials if needed
+4. Upload to ESP32
+5. Access the web server from your browser (IP will be shown on serial monitor)
+6. Adjust PID values live and observe robot behavior
+
+### 4. Run Mode
+
+1. Go to `/pid-runner/`
+2. Open `pid_runner.ino`
+3. Enter the final PID values obtained from tuning
+4. Upload to ESP32
+5. Let your robot follow the line using optimal PID settings
+
+## Circuit Diagram
+
+> ![Circuit Diagram](docs/circuit-diagram.png)
+
+_(Add or update your schematic image!)_
+
+## Contributing
+
+Contributions are welcome! See [CONTRIBUTING.md](docs/CONTRIBUTING.md) for details.
+
+## Troubleshooting
+
+- **Web server not accessible:** Check WiFi credentials and serial output.
+- **PID not responding:** Make sure sensors/motors are connected properly.
+- **Robot not following line:** Re-tune PID values or check IR sensor placement.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+**Contact:** [Your Name/Email]  
+**Project Website:** [If any]
