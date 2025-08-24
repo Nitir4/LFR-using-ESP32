@@ -74,10 +74,8 @@ cd LFR
 5. Let your robot follow the line using optimal PID settings
 
 ## Circuit Diagram
-
-> ![Circuit Diagram](docs/circuit-diagram.png)
-
-_(Add or update your schematic image!)_
+I am too lazy to draw a circuit diagram or a schematic (i can probably take a photo but the connections are messy enough to make my head spin).
+So let's just make do with pin definitions provided in the code.
 
 ## Contributing
 
